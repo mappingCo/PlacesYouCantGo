@@ -1,57 +1,160 @@
 {
+
   "type": "FeatureCollection",
+
   "features": [
+
     {
+
       "type": "Feature",
+
       "properties": {
+
         "city": "Mezhgorye",
+
         "text": "Mezhgorye is a closed town in Russia which is believed to house people working on the highly secret Mount Yamantaw. The town was founded in 1979. Mount Yamantaw stands at 1,640 metres (5,381 ft) and is the highest mountain in the southern Urals. Along with Kosvinsky Mountain (600 km to the north), it is suspected by the United States of being a large secret nuclear facility and/or bunker. Large excavation projects have been observed by U.S. satellite imagery as recently as the late 1990s, during the time of Boris Yeltsin’s pro-Western government after the fall of the Soviet Union. Two garrisons, Beloretsk-15 and Beloretsk-16, were built on top of the facility. Repeated U.S. questions have yielded several different responses from the Russian government regarding Mount Yamantaw. They have said it is a mining site, a repository for Russian treasures, a food storage area, and a bunker for leaders in case of nuclear war.",
+
+<<<<<<< HEAD
+
+        "lon": "N54º03'27.92",
+
+        "lat": "E57º49'02.19",
+
+        "top": 10,
+
+        "name": "Mezhgorye"
+
+=======
+
         "lon": "N 54º03'27.92\"",
+
         "lat": "E 57º49'02.19\"",
+
         "top": 10
+
+>>>>>>> 3293b69c255e5674c46a5170ad1728c82025a178
+
       },
+
       "geometry": {
+
         "type": "Point",
+
         "coordinates": [
+
           57.817275,
+
           54.057755556
+
         ]
+
       }
+
     },
+
     {
+
       "type": "Feature",
+
       "properties": {
+
         "name": "Area51",
+
         "text": "Area 51 is a nickname for a military base that is located in the southern portion of Nevada in the western United States, 83 miles (133 km) north-northwest of downtown Las Vegas. Situated at its center, on the southern shore of Groom Lake, is a large secretive military airfield. The base’s primary purpose is to support development and testing of experimental aircraft and weapons systems. The intense secrecy surrounding the base, the very existence of which the U.S. government barely acknowledges, has made it the frequent subject of conspiracy theories and a central component to unidentified flying object (UFO) folklore. The sign above states that deadly force can be used if people enter the Area 51 zone.",
+
         "lon": "W 115°47'34.8713\"",
+
         "lat": "N 37°15'47.0002\"",
+
         "top": 5
+
       },
+
       "geometry": {
+
         "type": "Point",
+
         "coordinates": [
+
           -115.79302,
+
           37.263056
+
         ]
+
       }
+
     },
+
     {
+
       "type": "Feature",
+
       "properties": {
+
         "name": "White’s Gentlemen’s Club",
+
         "city": "London",
+
         "lon": "N51º30'27.25",
+
         "lat": "O0º08'24.22",
+
         "text": "White’s is the most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical (but extremely private) gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles. The most famous of which is a 3,000 pound bet on which of two raindrops would slide down the window first. So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this exclusive club can only do so if invited by a sitting member who has the support of two other members. Unless you are a member of royalty, or are extremely powerful in politics or the arts, you are unlikely to ever see the exclusive White’s invitation.",
+
         "top": 6
+
       },
+
       "geometry": {
+
         "type": "Point",
+
         "coordinates": [
+
           -0.14008641242980957,
+
           51.50740358509734
+
         ]
+
       }
+
+    },
+
+    {
+
+      "type": "Feature",
+
+      "properties": {
+
+        "name": "Vatican Secret Archives",
+
+        "city": " Vatican City",
+
+        "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. Despite the foolishness of the recent junk from Ron Howard and Dan Brown (Angels and Demons) the documents are all available and there are no copies of suppressed scientific theories or great works that were banned. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives. The Vatican Secret Archives have been estimated to contain 52 miles (84 km) of shelving, and there are 35,000 volumes in the selective catalogue alone.",
+
+        "top": 9
+
+      },
+
+      "geometry": {
+
+        "type": "Point",
+
+        "coordinates": [
+
+          12.454553246498108,
+
+          41.906105883166276
+
+        ]
+
+      }
+
     }
+
   ]
+
 }
+
