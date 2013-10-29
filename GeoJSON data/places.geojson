@@ -6,8 +6,8 @@
       "properties": {
         "city": "Mezhgorye",
         "text": "Mezhgorye is a closed town in Russia which is believed to house people working on the highly secret Mount Yamantaw. The town was founded in 1979. Mount Yamantaw stands at 1,640 metres (5,381 ft) and is the highest mountain in the southern Urals. Along with Kosvinsky Mountain (600 km to the north), it is suspected by the United States of being a large secret nuclear facility and/or bunker. Large excavation projects have been observed by U.S. satellite imagery as recently as the late 1990s, during the time of Boris Yeltsin’s pro-Western government after the fall of the Soviet Union. Two garrisons, Beloretsk-15 and Beloretsk-16, were built on top of the facility. Repeated U.S. questions have yielded several different responses from the Russian government regarding Mount Yamantaw. They have said it is a mining site, a repository for Russian treasures, a food storage area, and a bunker for leaders in case of nuclear war.",
-        "Lon": "N 54º 03' 27.92\"",
-        "Lat": "E 57º 49' 02.19\"",
+        "lon": "N 54º03'27.92\"",
+        "lat": "E 57º49'02.19\"",
         "top": 10
       },
       "geometry": {
@@ -23,8 +23,8 @@
       "properties": {
         "name": "Area51",
         "text": "Area 51 is a nickname for a military base that is located in the southern portion of Nevada in the western United States, 83 miles (133 km) north-northwest of downtown Las Vegas. Situated at its center, on the southern shore of Groom Lake, is a large secretive military airfield. The base’s primary purpose is to support development and testing of experimental aircraft and weapons systems. The intense secrecy surrounding the base, the very existence of which the U.S. government barely acknowledges, has made it the frequent subject of conspiracy theories and a central component to unidentified flying object (UFO) folklore. The sign above states that deadly force can be used if people enter the Area 51 zone.",
-        "lon": "W 115° 47' 34.8713\"",
-        "lat": "N 37° 15' 47.0002\"",
+        "lon": "W 115°47'34.8713\"",
+        "lat": "N 37°15'47.0002\"",
         "top": 5
       },
       "geometry": {
