@@ -87,6 +87,24 @@
           54.009187
         ]
       }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "city": " Berryville",
+        "lon": " 77°53'28.60",
+        "lat": " 39° 3'41.78",
+        "top": 2,
+        "name": "Mount Weather Emergency Operations Center",
+        "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. The Mount Weather Emergency Operations Center is the real thing. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA). The center is already functioning and even in small local disasters in the US, much of the telecommunications traffic is routed through it."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.891278,
+          39.061604
+        ]
+      }
     }
   ]
 }
