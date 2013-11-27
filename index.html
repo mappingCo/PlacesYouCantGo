@@ -49,18 +49,28 @@
 
 
   <script>
+    var mapView=0;
     $('#next').click(function(){
-      $.getJSON( "./GeoJSON/places.geojson", function( data ) {
-        for (var i = data.features.length - 1; i >= 0; i--) {
-          console.log(data.features[i].properties.top)
-        };
-
-      });
+      mapView= mapView+1;
+      changeCenter(mapView);
     });
 
     $('#back').click(function(){
 
     });
+    var mapCenter;
+    changeCenter function(mapView){
+
+      $.getJSON( "./GeoJSON/places.geojson", function( data ) {
+        for (var i = data.features.length - 1; i >= 0; i--) {
+          if (data.features[i].properties.top == mapView){
+            mapCenter= data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1]
+          }
+          console.log(mapCenter)
+        };
+      });
+      map.panTo(new L.LatLng(mapCenter));
+    }
     //base map
     var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       maxZoom: 18,
