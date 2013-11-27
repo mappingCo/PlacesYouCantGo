@@ -81,14 +81,27 @@
       map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
       places.addTo(map);
       geojson.addTo(map);
-      map.setView(new L.LatLng(40.7, 11.2), 2);
+      map.setView(new L.LatLng(40.7, 15.2), 2);
     });
     //zoom a la siguiente localizacion 
     function changeCenter(mapView){
+/*      $.ajax({
+        url: './GeoJSON/places.geojson',
+        async: false,
+        dataType: 'json',
+        success: function (data) {
+          for (var i = data.features.length - 1; i >= 0; i--) {
+            if (data.features[i].properties.top == mapView){
+              console.log(data.features[i].geometry.coordinates[0]);
+              mapCenter = data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1];
+              console.log('mapCenter '+mapCenter)
+              return
+            }
+          };
+        }
+      });*/
       mapCenter= $.getJSON( "./GeoJSON/places.geojson", function( data ) {
-        for (var i = data.features.length - 1; i >= 0; i--) {
-          if (data.features[i].properties.top == mapView){
-            console.log(data.features[i].geometry.coordinates[0]);
+            console.log(data.features[mapView].geometry.coordinates[0]);
             var center = data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1];
             console.log('center '+center)
             return center
