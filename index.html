@@ -55,11 +55,11 @@
     var mapCenterLat;
 
     $('#next').click(function(){
-      if (mapView<6) {
+      if (mapView<5) {
         mapView= mapView+1;
       }
       else {
-        mapView=0
+        mapView=0;
       }
       changeCenter(mapView);
       console.log('change to mapView '+ mapView)
