@@ -99,12 +99,14 @@
           console.log(data.features[mapView].properties.name);
           mapCenterLat = data.features[mapView].geometry.coordinates[1];
           mapCenterLon = data.features[mapView].geometry.coordinates[0];
+
         }
 
       });
       console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon)
       //map.panTo(new L.LatLng(mapCenterLat,mapCenterLon));
-      map.setView(mapCenterLat, mapCenterLon, 8);
+      var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
+      map.setView(targetlatlng, 8);
     }
 
   </script>
