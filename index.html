@@ -19,7 +19,7 @@
   <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 <body>
-  <div id="cupcake-map"></div>
+  <div id="PlacesYouCantGo"></div>
   <script>
 
   var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
@@ -32,10 +32,14 @@
 
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.name);
+        layer.bindPopup(feature.properties.name + '<br />' 
+          + feature.properties.lon + ' '+ feature.properties.lat
+          );
+        layer.bindLabel(feature.properties.name);    //<---note this
+
       }
     });
-    var map = L.map('cupcake-map').fitBounds(geojson.getBounds());
+    var map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
     places.addTo(map);
     geojson.addTo(map);
   });
