@@ -55,7 +55,12 @@
     var mapCenterLat;
 
     $('#next').click(function(){
-      mapView= mapView+1;
+      if (mapView<6) {
+        mapView= mapView+1;
+      }
+      else {
+        mapView=0
+      }
       changeCenter(mapView);
       console.log('change to mapView '+ mapView)
     });
@@ -91,21 +96,13 @@
         async: false,
         dataType: 'json',
         success: function (data) {
-/*          for (var i = data.features.length - 1; i >= 0; i--) {
-            if (data.features[i].properties.top == mapView){*/
-              console.log(data.features[mapView].geometry.coordinates[0]);
-              mapCenterLat = data.features[mapView].geometry.coordinates[0];
-              mapCenterLon = data.features[mapView].geometry.coordinates[1];
-            }
-/*          };
-        }*/
+          console.log(data.features[mapView].properties.name);
+          mapCenterLat = data.features[mapView].geometry.coordinates[1];
+          mapCenterLon = data.features[mapView].geometry.coordinates[0];
+        }
+
       });
-      /*mapCenter= $.getJSON( "./GeoJSON/places.geojson", function( data ) {
-            console.log(data.features[mapView].geometry.coordinates[0]);
-            var center = data.features[mapView].geometry.coordinates[0]+','+data.features[mapView].geometry.coordinates[1];
-            console.log('center '+center)
-            return center
-          });*/
+
       console.log('mapCenter: '+ mapCenterLat +','+mapCenterLon)
       map.panTo(new L.LatLng(mapCenterLat,mapCenterLon));
     }
