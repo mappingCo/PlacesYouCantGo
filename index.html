@@ -22,15 +22,14 @@
   <div id="cupcake-map"></div>
   <script>
 
-  L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        })
   var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
   });
 
+
   $.getJSON("https://raw.github.com/mappingCo/PlacesYouCantGo/master/GeoJSON/places.geojson", function(data) {
+
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
         layer.bindPopup(feature.properties.name);
