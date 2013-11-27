@@ -51,7 +51,8 @@
   <script>
     var map;
     var mapView = 0;
-    var mapCenter;
+    var mapCenterLon;
+    var mapCenterLat;
 
     $('#next').click(function(){
       mapView= mapView+1;
@@ -93,9 +94,8 @@
 /*          for (var i = data.features.length - 1; i >= 0; i--) {
             if (data.features[i].properties.top == mapView){*/
               console.log(data.features[mapView].geometry.coordinates[0]);
-              mapCenter = data.features[mapView].geometry.coordinates[0]+','+data.features[mapView].geometry.coordinates[1];
-              console.log('mapCenter '+mapCenter)
-              return
+              mapCenterLat = data.features[mapView].geometry.coordinates[0];
+              mapCenterLon = data.features[mapView].geometry.coordinates[1];
             }
 /*          };
         }*/
@@ -106,8 +106,8 @@
             console.log('center '+center)
             return center
           });*/
-      console.log('mapCenter: '+ mapCenter)
-      map.panTo(new L.LatLng(mapCenter));
+      console.log('mapCenter: '+ mapCenterLat +','+mapCenterLon)
+      map.panTo(new L.LatLng(mapCenterLat,mapCenterLon));
     }
 
   </script>
