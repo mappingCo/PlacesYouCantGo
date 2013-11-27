@@ -28,7 +28,7 @@
   });
 
 
-  $.getJSON("https://raw.github.com/mappingCo/PlacesYouCantGo/master/GeoJSON/places.geojson", function(data) {
+  $.getJSON("./GeoJSON/places.geojson", function(data) {
 
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
