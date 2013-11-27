@@ -49,7 +49,10 @@
 
 
   <script>
-    var mapView=0;
+    var map;
+    var mapView = 0;
+    var mapCenter;
+
     $('#next').click(function(){
       mapView= mapView+1;
       changeCenter(mapView);
@@ -58,7 +61,7 @@
     $('#back').click(function(){
 
     });
-    var mapCenter;
+
     
 
     //base map
@@ -74,10 +77,10 @@
           layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.text);
         }
       });
-      var map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
+      map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
       places.addTo(map);
       geojson.addTo(map);
-      map.setView(new L.LatLng(40.737, -30.92), 2);
+      map.setView(new L.LatLng(40.737, -40.92), 2);
     });
     //zoom a la siguiente localizacion 
     function changeCenter(mapView){
@@ -86,7 +89,7 @@
           if (data.features[i].properties.top == mapView){
             mapCenter= data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1]
           }
-          console.log(mapCenter)
+          console.log('mapCenter: '+ mapCenter)
         };
       });
       map.panTo(new L.LatLng(mapCenter));
