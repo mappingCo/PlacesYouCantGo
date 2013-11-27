@@ -32,10 +32,9 @@
 
     var geojson = L.geoJson(data, {
       onEachFeature: function (feature, layer) {
-        layer.bindPopup(feature.properties.name + '<br />' 
+        layer.bindPopup('<b>'+feature.properties.name +'</b><br />' 
           + feature.properties.lon + ' '+ feature.properties.lat
           );
-        layer.bindLabel(feature.properties.name);    //<---note this
 
       }
     });
