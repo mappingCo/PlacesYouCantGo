@@ -89,7 +89,9 @@
         for (var i = data.features.length - 1; i >= 0; i--) {
           if (data.features[i].properties.top == mapView){
             console.log(data.features[i].geometry.coordinates[0]);
-            return data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1]
+            var center = data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1];
+            console.log(center)
+            return center
           }
         };
       });
