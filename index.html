@@ -85,11 +85,11 @@
     });
     //zoom a la siguiente localizacion 
     function changeCenter(mapView){
-      $.getJSON( "./GeoJSON/places.geojson", function( data ) {
+      mapCenter= $.getJSON( "./GeoJSON/places.geojson", function( data ) {
         for (var i = data.features.length - 1; i >= 0; i--) {
           if (data.features[i].properties.top == mapView){
             console.log(data.features[i].geometry.coordinates[0]);
-            mapCenter= data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1]
+            return data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1]
           }
         };
       });
