@@ -105,7 +105,7 @@
             var center = data.features[i].geometry.coordinates[0]+','+data.features[i].geometry.coordinates[1];
             console.log('center '+center)
             return center
-          }
+          });
       console.log('mapCenter: '+ mapCenter)
       map.panTo(new L.LatLng(mapCenter));
     }
