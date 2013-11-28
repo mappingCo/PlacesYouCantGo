@@ -10,7 +10,7 @@
         "lat": "E 57º49'02.19\"",
         "top": 10,
         "name": "Mezhgorye",
-        "zoom": 7
+        "zoom": 8
       },
       "geometry": {
         "type": "Point",
@@ -47,7 +47,7 @@
         "lat": "O0º08'24.22",
         "text": "The most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles.  So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this club can only do so if invited by a sitting member who has the support of two other members.",
         "top": 6,
-        "zoom": 12
+        "zoom": 13
       },
       "geometry": {
         "type": "Point",
@@ -64,7 +64,7 @@
         "city": " Vatican City",
         "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives.",
         "top": 9,
-        "zoom": 12
+        "zoom": 13
       },
       "geometry": {
         "type": "Point",
@@ -102,7 +102,7 @@
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
         "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA).",
-        "zoom": 7
+        "zoom": 8
       },
       "geometry": {
         "type": "Point",
