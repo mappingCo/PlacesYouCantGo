@@ -9,7 +9,8 @@
         "lon": "N 54º03'27.92\"",
         "lat": "E 57º49'02.19\"",
         "top": 10,
-        "name": "Mezhgorye"
+        "name": "Mezhgorye",
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -26,7 +27,8 @@
         "text": "Area 51 is a nickname for a military base that is located in the southern portion of Nevada in the western United States, 83 miles (133 km) north-northwest of downtown Las Vegas. The base’s primary purpose is to support development and testing of experimental aircraft and weapons systems. The intense secrecy surrounding the base, has made it the frequent subject of conspiracy theories and a central component to unidentified flying object (UFO) folklore.",
         "lon": "W 115°47'34.8713\"",
         "lat": "N 37°15'47.0002\"",
-        "top": 5
+        "top": 5,
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -44,7 +46,8 @@
         "lon": "N51º30'27.25",
         "lat": "O0º08'24.22",
         "text": "The most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles.  So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this club can only do so if invited by a sitting member who has the support of two other members.",
-        "top": 6
+        "top": 6,
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -60,7 +63,8 @@
         "name": "Vatican Secret Archives",
         "city": " Vatican City",
         "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives.",
-        "top": 9
+        "top": 9,
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -78,7 +82,8 @@
         "lon": "  1°41'10.38\"O",
         "lat": " 54° 0'33.07\"N",
         "text": "RAF Menwith Hill is a British military base with connections to the global ECHELON spy network. The site contains an extensive satellite ground station and is a communications intercept and missile warning site and has been described as the largest electronic monitoring station in the world. The site acts as a ground station for a number of satellites operated by the US National Reconnaissance Office, on behalf of the US National Security Agency, with antennae contained in a large number of highly distinctive white radomes, and is alleged to be an element of the ECHELON system.",
-        "top": 1
+        "top": 1,
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -96,7 +101,8 @@
         "lat": " 39° 3'41.78",
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
-        "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA)."
+        "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA).",
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
