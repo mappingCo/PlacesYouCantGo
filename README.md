@@ -2,4 +2,6 @@ Animated map made on the "Top 10 Places You Can’t Go" list by JAMIE FRATER in 
 
 http://listverse.com/2010/01/06/top-10-places-you-cant-go/
 
+Made with GeoJSON data and leaflet.js
+
 You can see it in: http://mappingco.github.io/PlacesYouCantGo/
