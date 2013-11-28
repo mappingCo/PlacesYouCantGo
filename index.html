@@ -101,7 +101,7 @@
       map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
       places.addTo(map);
       geojson.addTo(map);
-      map.setView(new L.LatLng(40.7, 45.25), 2);
+      map.setView(new L.LatLng(40.7, 30.25), 2);
     });
     //zoom a la siguiente localizacion 
     function changeCenter(mapView){
@@ -125,7 +125,7 @@
 
       var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
       map.setView(targetlatlng, mapViewZoom);
-      $('#headline').html('<b>#'+top_p + ' </b><i>'+headline_h1+'</i>');
+      $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
       $('#info').html('<p>'+info_p+'</p>');
     }
 
