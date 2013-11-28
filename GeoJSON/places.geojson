@@ -46,7 +46,7 @@
         "lat": " 33°48'39.84\"N",
         "text": "Private club located in the heart of the New Orleans Square section of Disneyland. Officially maintained as a secret feature of the theme park, the entrance of the club is located next to the Blue Bayou Restaurant at “33 Royal Street” with the entrance recognizable by an ornate address plate with the number 33 engraved on it. Fees for joining range from 10 – 30 thousand US dollars and membership comes with a car park. ",
         "top": 8,
-        "zoom": 13
+        "zoom": 15
       },
       "geometry": {
         "type": "Point",
@@ -102,7 +102,7 @@
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
         "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA).",
-        "zoom": 8
+        "zoom": 9
       },
       "geometry": {
         "type": "Point",
