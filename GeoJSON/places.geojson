@@ -28,7 +28,7 @@
         "lon": "W 115°47'34.8713\"",
         "lat": "N 37°15'47.0002\"",
         "top": 5,
-        "zoom": 9
+        "zoom": 8
       },
       "geometry": {
         "type": "Point",
@@ -47,7 +47,7 @@
         "lat": "O0º08'24.22",
         "text": "The most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles.  So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this club can only do so if invited by a sitting member who has the support of two other members.",
         "top": 6,
-        "zoom": 13
+        "zoom": 14
       },
       "geometry": {
         "type": "Point",
@@ -64,7 +64,7 @@
         "city": " Vatican City",
         "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives.",
         "top": 9,
-        "zoom": 13
+        "zoom": 15
       },
       "geometry": {
         "type": "Point",
