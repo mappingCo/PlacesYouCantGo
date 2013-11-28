@@ -40,10 +40,13 @@
         <div class="context footer">
         </div>
       </div>
-      <div id="back-button">
+      <div id="go-button" >
+        <a id="go">go</a></p>
+      </div>
+      <div id="back-button" class="hidden">
         <a id="back">back</a></p>
       </div>
-      <div id="next-button">
+      <div id="next-button" class="hidden">
         <a id="next">next</a></p>
       </div>
     </div>
@@ -61,6 +64,14 @@
     
     var numFeatures = 5;
 
+    $('#go').click(function(){
+      $('#back-button').removeClass('hidden');
+      $('#next-button').removeClass('hidden');
+      $('#go-button').addClass('hidden');
+      changeCenter(mapView);
+      console.log('change to mapView '+ mapView)
+    });
+    
     $('#next').click(function(){
       if (mapView < numFeatures) {
         mapView= mapView+1;
