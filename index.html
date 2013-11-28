@@ -49,15 +49,18 @@
 
 
   <script>
-    var map;
-    var mapView = 0;
-    var mapCenterLon;
-    var mapCenterLat;
-    var headline_h1;
-    var info_p;
+    var map,
+      mapView = 0,
+      mapCenterLon,
+      mapCenterLat,
+      headline_h1,
+      info_p,
+      top_p;
+    
+    var numFeatures = 5;
 
     $('#next').click(function(){
-      if (mapView<5) {
+      if (mapView < numFeatures) {
         mapView= mapView+1;
       }
       else {
@@ -68,7 +71,14 @@
     });
 
     $('#back').click(function(){
-
+      if (mapView>0) {
+        mapView= mapView-1;
+      }
+      else {
+        mapView= numFeatures;
+      }
+      changeCenter(mapView);
+      console.log('change to mapView '+ mapView)
     });
 
     
@@ -103,6 +113,7 @@
           mapCenterLon = data.features[mapView].geometry.coordinates[0];
           headline_h1 = data.features[mapView].properties.name;
           info_p = data.features[mapView].properties.text;
+          top_p = data.features[mapView].properties.top
 
         }
 
@@ -112,7 +123,7 @@
       var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
       map.setView(targetlatlng, 8);
       $('#headline').html('<i>'+headline_h1+'</i>');
-      $('#info').html('<p>'+info_p+'</p>');
+      $('#info').html('<p><em>#'+top_p + '</em></p><p>'+info_p+'</p>');
     }
 
   </script>
