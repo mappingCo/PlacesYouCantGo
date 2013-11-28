@@ -25,6 +25,8 @@
       "properties": {
         "name": "Vatican Secret Archives",
         "city": " Vatican City",
+        "lon": " 12°27'16.39\"E",
+        "lat": "41°54'21.98\"N",
         "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives.",
         "top": 9,
         "zoom": 15
