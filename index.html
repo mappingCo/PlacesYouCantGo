@@ -51,6 +51,7 @@
   <script>
     var map,
       mapView = 0,
+      mapViewZoom,
       mapCenterLon,
       mapCenterLat,
       headline_h1,
@@ -113,15 +114,16 @@
           mapCenterLon = data.features[mapView].geometry.coordinates[0];
           headline_h1 = data.features[mapView].properties.name;
           info_p = data.features[mapView].properties.text;
-          top_p = data.features[mapView].properties.top
+          top_p = data.features[mapView].properties.top;
+          mapViewZoom= data.features[mapView].properties.zoom;
 
         }
 
       });
       console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon)
-      //map.panTo(new L.LatLng(mapCenterLat,mapCenterLon));
+
       var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
-      map.setView(targetlatlng, 8);
+      map.setView(targetlatlng, mapViewZoom);
       $('#headline').html('<i>'+headline_h1+'</i>');
       $('#info').html('<p><em>#'+top_p + '</em></p><p>'+info_p+'</p>');
     }
