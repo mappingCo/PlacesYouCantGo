@@ -83,8 +83,8 @@
         "top": 6,
         "name": "White’s Gentlemen’s Club",
         "city": "London",
-        "lon": "O 0°08'24.22",
-        "lat": "N 51°30'27.25",
+        "lon": "O 0°08'24.22\"",
+        "lat": "N 51°30'27.25\"",
         "text": "The most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles.  So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this club can only do so if invited by a sitting member who has the support of two other members.",
         "zoom": 14
       },
@@ -121,8 +121,8 @@
         "top": 4,
         "name": "Room 39",
         "city": "Pyongyang",
-        "lon": "E 125°44'54.13",
-        "lat": "N 39° 0'57.07",
+        "lon": "E 125°44'54.13\"",
+        "lat": "N 39° 0'57.07\"",
         "text": "Room 39 or Bureau 39 is arguably one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It has been described as the lynchpin of the North’s so-called “court economy” centered on the dynastic Kim family. It is unknown how the name originated. Very little is known about Room 39 due to the secretive nature surrounding the organization, but it is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions. It is also alleged that Room 39 is involved in drug smuggling and illicit weapon sales. It is known, however, that the organization has 120 foreign trade companies under its jurisdiction and is under the direct control of Kim Jong-il. North Korea has denied taking part in any illegal activities. Room 39 is believed to be located inside a ruling Workers’ Party building in Pyongyang, the capital city of North Korea",
         "zoom": 10
       },
@@ -159,8 +159,8 @@
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
         "city": " Berryville",
-        "lon": "W 77°53'28.60\",
-        "lat": "N 39° 3'41.78\",
+        "lon": "W 77°53'28.60\"",
+        "lat": "N 39° 3'41.78\"",
         "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA).",
         "zoom": 8
       },
