@@ -19,7 +19,7 @@ $('#go').click(function(){
 });
 
 $('#next').click(function(){
-  if (mapView < numFeatures) {
+  if (mapView < numFeatures-1) {
     mapView= mapView+1;
   }
   else {
@@ -34,7 +34,7 @@ $('#back').click(function(){
     mapView= mapView-1;
   }
   else {
-    mapView= numFeatures;
+    mapView= numFeatures-1;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
