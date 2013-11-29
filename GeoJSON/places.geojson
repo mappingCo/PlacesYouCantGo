@@ -98,6 +98,25 @@
     {
       "type": "Feature",
       "properties": {
+        "top": 3,
+        "name": "Ise Grand Shrine",
+        "city": "Ise",
+        "lon": "N 34°27'17.90\"",
+        "lat": "W 136°43'32.90\"",
+        "text": "The Ise Grand Shrine in Japan (which is actually a series of over 100 shrines) is the most sacred shrine in Japan. It is dedicated to Amaterasu (the Sun goddess) and has been in existence since 4BC. The main shrine is alleged to hold the most important item in Japan’s imperial history: the Naik? (the mirror from Japanese mythology which eventually ended up in the hands of the first emperors). The shrine is demolished and rebuilt every 20 years in keeping with the Shinto idea of death and rebirth (the next rebuilding will be in 2013). This ranks very high on the list of places you will never go because the only person who can enter is the priest or priestess and he must be a member of the Japanese imperial family.",
+        "zoom": 12
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.72578692436218,
+          34.45496983812094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
         "city": " Berryville",
