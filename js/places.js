@@ -60,6 +60,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   geojson.addTo(map);
   map.setView(new L.LatLng(40.7, 30.25), 2);
 });
+
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
