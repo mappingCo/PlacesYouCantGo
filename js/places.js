@@ -10,42 +10,37 @@ var map,
 
 var numFeatures = 10;
 
-
 $('#go').click(function(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
   $('#go-button').addClass('hidden');
-  globalView=false;
   changeCenter(mapView);
-  console.log('change to mapView: '+ mapView)
+  console.log('change to mapView '+ mapView)
 });
 
 $('#next').click(function(){
-  if (mapView < numFeatures) {
+  if (mapView < numFeatures-1) {
     mapView= mapView+1;
-    console.log('change to mapView: '+ mapView)
   }
   else {
     mapView=0;
-    map.setView(new L.LatLng(40.7, 30.25), 2);;
   }
   changeCenter(mapView);
+  console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
   if (mapView>0) {
     mapView= mapView-1;
-    console.log('change to mapView '+ mapView)
   }
   else {
-    mapView= 0;
-    map.setView(new L.LatLng(40.7, 30.25), 2);
+    mapView= numFeatures-1;
   }
   changeCenter(mapView);
+  console.log('change to mapView '+ mapView)
 });
 
-
-//base map
+//create base map
 var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -73,6 +68,7 @@ function changeCenter(mapView){
     async: false,
     dataType: 'json',
     success: function (data) {
+      console.log(mapView);
       console.log(data.features[mapView].properties.name);
       mapCenterLat = data.features[mapView].geometry.coordinates[1];
       mapCenterLon = data.features[mapView].geometry.coordinates[0];
