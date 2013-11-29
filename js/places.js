@@ -21,7 +21,7 @@ $('#go').click(function(){
 });
 
 $('#next').click(function(){
-  if (mapView < numFeatures) {
+  if (mapView < numFeatures-1) {
     mapView= mapView+1;
     console.log('change to mapView: '+ mapView)
     changeCenter(mapView);
