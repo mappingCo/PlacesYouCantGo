@@ -66,8 +66,8 @@
         "city": "Moscow",
         "lon": "E 37°37'2.94\"",
         "lat": "N 55°45'12.34\"",
-        "text": "Metro-2 in Moscow, Russia is a purported secret underground metro system which parallels the public Moscow Metro. The system was built supposedly during (or from) the time of Stalin and codenamed D-6 by the KGB. Russian journalists have reported that the existence of Metro-2 is neither confirmed nor denied by the Federal Security Service of the Russian Federation (FSB) or the Moscow Metro administration. The length of Metro-2 is rumored to exceed even that of the “civil” (i.e. public) Metro. (It is said to have 4 lines and lie 50 to 200 m deep. It is said to connect the Kremlin with the FSB headquarters, the government airport at Vnukovo-2, and an underground town at Ramenki, in addition to other locations of national importance. Needless to say, the fact that no one confirms its existence makes it pretty difficult to visit.",
-        "zoom": 8
+        "text": "Metro-2 in Moscow is a purported secret underground metro system which parallels the public Moscow Metro. The system was built supposedly during (or from) the time of Stalin and codenamed D-6 by the KGB. The existence of Metro-2 is neither confirmed nor denied by the Federal Security Service of the Russian Federation (FSB). The length of Metro-2 is rumored to exceed even that of the “civil” (i.e. public) Metro. (It is said to have 4 lines and lie 50 to 200 m deep. It is said to connect the Kremlin with the FSB headquarters, the government airport at Vnukovo-2, and an underground town at Ramenki. Needless to say, the fact that no one confirms its existence makes it pretty difficult to visit.",
+        "zoom": 10
       },
       "geometry": {
         "type": "Point",
@@ -123,7 +123,7 @@
         "city": "Pyongyang",
         "lon": "E 125°44'54.13\"",
         "lat": "N 39° 0'57.07\"",
-        "text": "Room 39 or Bureau 39 is arguably one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It has been described as the lynchpin of the North’s so-called “court economy” centered on the dynastic Kim family. It is unknown how the name originated. Very little is known about Room 39 due to the secretive nature surrounding the organization, but it is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions. It is also alleged that Room 39 is involved in drug smuggling and illicit weapon sales. It is known, however, that the organization has 120 foreign trade companies under its jurisdiction and is under the direct control of Kim Jong-il. North Korea has denied taking part in any illegal activities. Room 39 is believed to be located inside a ruling Workers’ Party building in Pyongyang, the capital city of North Korea",
+        "text": "Room 39 or Bureau 39 is arguably one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It has been described as the lynchpin of the North’s so-called “court economy” centered on the dynastic Kim family. It is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions. It is known, however, that the organization has 120 foreign trade companies under its jurisdiction and is under the direct control of Kim Jong-il. Room 39 is believed to be located inside a ruling Workers’ Party building in Pyongyang, the capital city of North Korea",
         "zoom": 10
       },
       "geometry": {
@@ -142,7 +142,7 @@
         "city": "Ise",
         "lon": "W 136°43'32.90\"",
         "lat": "N 34°27'17.90\"",
-        "text": "The Ise Grand Shrine in Japan (which is actually a series of over 100 shrines) is the most sacred shrine in Japan. It is dedicated to Amaterasu (the Sun goddess) and has been in existence since 4BC. The main shrine is alleged to hold the most important item in Japan’s imperial history: the Naik? (the mirror from Japanese mythology which eventually ended up in the hands of the first emperors). The shrine is demolished and rebuilt every 20 years in keeping with the Shinto idea of death and rebirth (the next rebuilding will be in 2013). This ranks very high on the list of places you will never go because the only person who can enter is the priest or priestess and he must be a member of the Japanese imperial family.",
+        "text": "The Ise Grand Shrine in Japan (which is actually a series of over 100 shrines) is the most sacred shrine in Japan. It is dedicated to Amaterasu (the Sun goddess) and has been in existence since 4BC. The main shrine is alleged to hold the most important item in Japan’s imperial history: the Naik? (the mirror from Japanese mythology which eventually ended up in the hands of the first emperors). The shrine is demolished and rebuilt every 20 years in keeping with the Shinto idea of death and rebirth. This ranks very high on the list of places you will never go because the only person who can enter is the priest or priestess and he must be a member of the Japanese imperial family.",
         "zoom": 12
       },
       "geometry": {

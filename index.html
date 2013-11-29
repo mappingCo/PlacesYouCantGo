@@ -1,25 +1,17 @@
 <!doctype html>
 <html>
 <head>
+  <link rel="shortcut icon" href="img/icono.ico" type="image/x-icon"/>
+  <title>Places you cant go</title>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
   <link rel="stylesheet" href="css/places.css">
   <!--[if lte IE 8]>
      <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
   <![endif]-->
-  <style type="text/css">
-    body {
-      padding: 0;
-      margin: 0;
-    }
-
-    html, body, #PlacesYouCantGo {
-      height: 100%;
-      width: 90%;
-    }
-
-  </style>
+ 
   <script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+</head>
 <body>
   <div id="PlacesYouCantGo"></div>
 
@@ -31,7 +23,7 @@
         <h1 id="headline"><i>"Top 10 Places You Can't Go"</i></h1>
         <div id="info">
             <p>
-                Animated map made with the "Top 10 Places You Cant Go" list by JAMIE FRATER in 2010
+              Animated map made with the "Top 10 Places You Cant Go" list by JAMIE FRATER in 2010
             </p>
             <p class='source'>
                 - <a href="http://listverse.com/2010/01/06/top-10-places-you-cant-go/" target="_blank">listverse.com</a>
@@ -51,9 +43,9 @@
       </div>
     </div>
 
-
+ <script src="js/places.js"></script>
   <script>
-    var map,
+/*    var map,
       mapView = 0,
       mapViewZoom,
       mapCenterLon,
@@ -138,7 +130,7 @@
       map.setView(targetlatlng, mapViewZoom);
       $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
       $('#info').html('<p>'+info_p+'</p>');
-    }
+    }*/
 
   </script>
 </body>
