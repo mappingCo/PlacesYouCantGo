@@ -67,7 +67,7 @@
         "lon": "E 37°37'2.94\"",
         "lat": "N 55°45'12.34\"",
         "text": "Metro-2 in Moscow is a purported secret underground metro system which parallels the public Moscow Metro. The system was built supposedly during (or from) the time of Stalin and codenamed D-6 by the KGB. The existence of Metro-2 is neither confirmed nor denied by the Federal Security Service of the Russian Federation (FSB). The length of Metro-2 is rumored to exceed even that of the “civil” (i.e. public) Metro. (It is said to have 4 lines and lie 50 to 200 m deep. It is said to connect the Kremlin with the FSB headquarters, the government airport at Vnukovo-2, and an underground town at Ramenki. Needless to say, the fact that no one confirms its existence makes it pretty difficult to visit.",
-        "zoom": 10
+        "zoom": 11
       },
       "geometry": {
         "type": "Point",
@@ -123,8 +123,8 @@
         "city": "Pyongyang",
         "lon": "E 125°44'54.13\"",
         "lat": "N 39° 0'57.07\"",
-        "text": "Room 39 or Bureau 39 is arguably one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It has been described as the lynchpin of the North’s so-called “court economy” centered on the dynastic Kim family. It is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions. It is known, however, that the organization has 120 foreign trade companies under its jurisdiction and is under the direct control of Kim Jong-il. Room 39 is believed to be located inside a ruling Workers’ Party building in Pyongyang, the capital city of North Korea",
-        "zoom": 10
+        "text": "Room 39 or Bureau 39 is one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions.",
+        "zoom": 11
       },
       "geometry": {
         "type": "Point",
