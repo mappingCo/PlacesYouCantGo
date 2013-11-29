@@ -68,6 +68,7 @@ function changeCenter(mapView){
     async: false,
     dataType: 'json',
     success: function (data) {
+      console.log(mapView);
       console.log(data.features[mapView].properties.name);
       mapCenterLat = data.features[mapView].geometry.coordinates[1];
       mapCenterLon = data.features[mapView].geometry.coordinates[0];
