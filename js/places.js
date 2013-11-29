@@ -10,34 +10,39 @@ var map,
 
 var numFeatures = 10;
 
+var globalView= true;
+
 $('#go').click(function(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
   $('#go-button').addClass('hidden');
+  globalView=false;
   changeCenter(mapView);
-  console.log('change to mapView '+ mapView)
+  console.log('change to mapView: '+ mapView)
 });
 
 $('#next').click(function(){
   if (mapView < numFeatures) {
     mapView= mapView+1;
+    console.log('change to mapView: '+ mapView)
   }
   else {
     mapView=0;
+    globalView=true;
   }
   changeCenter(mapView);
-  console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
   if (mapView>0) {
     mapView= mapView-1;
+    console.log('change to mapView '+ mapView)
   }
   else {
-    mapView= numFeatures;
+    mapView= 0;
+    globalView=true;
   }
   changeCenter(mapView);
-  console.log('change to mapView '+ mapView)
 });
 
 
@@ -48,18 +53,20 @@ var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
 
-//get geojson data on the map
-$.getJSON("./GeoJSON/places.geojson", function(data) {
-  var geojson = L.geoJson(data, {
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
-    }
+if (globalView) {
+  //put geojson data on the map
+  $.getJSON("./GeoJSON/places.geojson", function(data) {
+    var geojson = L.geoJson(data, {
+      onEachFeature: function (feature, layer) {
+        layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
+      }
+    });
+    map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
+    places.addTo(map);
+    geojson.addTo(map);
+    map.setView(new L.LatLng(40.7, 30.25), 2);
   });
-  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
-  places.addTo(map);
-  geojson.addTo(map);
-  map.setView(new L.LatLng(40.7, 30.25), 2);
-});
+};
 
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
