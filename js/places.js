@@ -10,40 +10,35 @@ var map,
 
 var numFeatures = 10;
 
-
 $('#go').click(function(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
   $('#go-button').addClass('hidden');
-  globalView=false;
   changeCenter(mapView);
-  console.log('change to mapView: '+ mapView)
+  console.log('change to mapView '+ mapView)
 });
 
 $('#next').click(function(){
-  if (mapView < numFeatures-1) {
+  if (mapView < numFeatures) {
     mapView= mapView+1;
-    console.log('change to mapView: '+ mapView)
-    changeCenter(mapView);
   }
   else {
     mapView=0;
-    map.setView(new L.LatLng(40.7, 30.25), 2);;
   }
+  changeCenter(mapView);
+  console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
   if (mapView>0) {
     mapView= mapView-1;
-    console.log('change to mapView '+ mapView);
-    changeCenter(mapView);
   }
   else {
-    mapView= 0;
-    map.setView(new L.LatLng(40.7, 30.25), 2);
+    mapView= numFeatures;
   }
+  changeCenter(mapView);
+  console.log('change to mapView '+ mapView)
 });
-
 
 //create base map
 var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
