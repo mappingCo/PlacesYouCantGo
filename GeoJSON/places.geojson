@@ -98,6 +98,25 @@
     {
       "type": "Feature",
       "properties": {
+        "top": 4,
+        "name": "Room 39",
+        "city": " 39° 0'57.07",
+        "lon": "N 39° 0'57.07",
+        "lat": "E 125°44'54.13",
+        "text": "Room 39 or Bureau 39 is arguably one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It has been described as the lynchpin of the North’s so-called “court economy” centered on the dynastic Kim family. It is unknown how the name originated. Very little is known about Room 39 due to the secretive nature surrounding the organization, but it is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions. It is also alleged that Room 39 is involved in drug smuggling and illicit weapon sales. It is known, however, that the organization has 120 foreign trade companies under its jurisdiction and is under the direct control of Kim Jong-il. North Korea has denied taking part in any illegal activities. Room 39 is believed to be located inside a ruling Workers’ Party building in Pyongyang, the capital city of North Korea",
+        "zoom": 10
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.74827790260315,
+          39.01580768744855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "top": 3,
         "name": "Ise Grand Shrine",
         "city": "Ise",
