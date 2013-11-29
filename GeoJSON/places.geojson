@@ -7,8 +7,8 @@
         "top": 10,
         "name": "Mezhgorye",
         "city": "Mezhgorye",
-        "lon": "N 54º03'27.92\"",
-        "lat": "E 57º49'02.19\"",
+        "lon": "E 57º49'02.19\"",
+        "lat": "N 54º03'27.92\"",
         "text": "Mezhgorye is a closed town in Russia which is believed to house people working on the highly secret Mount Yamantaw. The town was founded in 1979. Mount Yamantaw stands at 1,640 metres (5,381 ft) and is the highest mountain in the southern Urals. Along with Kosvinsky Mountain (600 km to the north), it is suspected by the United States of being a large secret nuclear facility and/or bunker. Two garrisons, Beloretsk-15 and Beloretsk-16, were built on top of the facility. ",
         "zoom": 8
       },
@@ -26,8 +26,8 @@
         "top": 9,
         "name": "Vatican Secret Archives",
         "city": " Vatican City",
-        "lon": " 12°27'16.39\"E",
-        "lat": "41°54'21.98\"N",
+        "lon": "E 12°27'16.39\"",
+        "lat": "N 41°54'21.98\"",
         "text": "The archives are not secret despite their names. You can view any document you wish. But you cannot enter the archive. You must submit your request for a document and it will be supplied to you. The only documents you can’t access are those which are not yet 75 years old (in order to protect diplomatic and governmental information). Indexes are available for people who want to see if a document exists in the archives.",
         "zoom": 15
       },
@@ -45,8 +45,8 @@
         "top": 8,
         "name": "Club 33",
         "city": "DisneyLand",
-        "lon": "117°55'16.96\"O",
-        "lat": " 33°48'39.84\"N",
+        "lon": "W 117°55'16.96\"",
+        "lat": "N 33°48'39.84\"",
         "text": "Private club located in the heart of the New Orleans Square section of Disneyland. Officially maintained as a secret feature of the theme park, the entrance of the club is located next to the Blue Bayou Restaurant at “33 Royal Street” with the entrance recognizable by an ornate address plate with the number 33 engraved on it. Fees for joining range from 10 – 30 thousand US dollars and membership comes with a car park. ",
         "zoom": 13
       },
@@ -61,11 +61,30 @@
     {
       "type": "Feature",
       "properties": {
+        "top": 7,
+        "name": "Moscow Metro-2",
+        "city": "Moscow",
+        "lon": "E 37°37'2.94\"",
+        "lat": "N 55°45'12.34\"",
+        "text": "Metro-2 in Moscow is a purported secret underground metro system which parallels the public Moscow Metro. The system was built supposedly during (or from) the time of Stalin and codenamed D-6 by the KGB. The existence of Metro-2 is neither confirmed nor denied by the Federal Security Service of the Russian Federation (FSB). The length of Metro-2 is rumored to exceed even that of the “civil” (i.e. public) Metro. (It is said to have 4 lines and lie 50 to 200 m deep. It is said to connect the Kremlin with the FSB headquarters, the government airport at Vnukovo-2, and an underground town at Ramenki. Needless to say, the fact that no one confirms its existence makes it pretty difficult to visit.",
+        "zoom": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          37.6226806640625,
+          55.75300866197417
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "top": 6,
         "name": "White’s Gentlemen’s Club",
         "city": "London",
-        "lon": "N51º30'27.25",
-        "lat": "O0º08'24.22",
+        "lon": "O 0°08'24.22\"",
+        "lat": "N 51°30'27.25\"",
         "text": "The most exclusive English gentlemen’s club. It was founded in 1693 by Italian Francesco Bianco (Francis White) to sell the newly discovered hot chocolate but eventually became a typical gentlemen’s club. The club is famous for its “betting book” in which members make bizarre gambles.  So why is this club on the list? Women are excluded completely from membership, so that is half our audience out. Secondly, men who want to join this club can only do so if invited by a sitting member who has the support of two other members.",
         "zoom": 14
       },
@@ -82,6 +101,7 @@
       "properties": {
         "top": 5,
         "name": "Area 51",
+        "city": "Groom Lake, Nevada",
         "lon": "W 115°47'34.8713\"",
         "lat": "N 37°15'47.0002\"",
         "text": "Area 51 is a nickname for a military base that is located in the southern portion of Nevada in the western United States, 83 miles (133 km) north-northwest of downtown Las Vegas. The base’s primary purpose is to support development and testing of experimental aircraft and weapons systems. The intense secrecy surrounding the base, has made it the frequent subject of conspiracy theories and a central component to unidentified flying object (UFO) folklore.",
@@ -98,11 +118,49 @@
     {
       "type": "Feature",
       "properties": {
+        "top": 4,
+        "name": "Room 39",
+        "city": "Pyongyang",
+        "lon": "E 125°44'54.13\"",
+        "lat": "N 39° 0'57.07\"",
+        "text": "Room 39 or Bureau 39 is one of the most secretive organizations in North Korea that seeks ways to obtain foreign currency for Kim Jong-il, North Korea’s Chairman of the National Defense Commission. Room 39 was established in the late 1970s. It is widely speculated that the organization uses 10 to 20 bank accounts in China and Switzerland for the purposes of counterfeiting, money laundering, and other illicit transactions.",
+        "zoom": 11
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          125.74827790260315,
+          39.01580768744855
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "top": 3,
+        "name": "Ise Grand Shrine",
+        "city": "Ise",
+        "lon": "W 136°43'32.90\"",
+        "lat": "N 34°27'17.90\"",
+        "text": "The Ise Grand Shrine in Japan (which is actually a series of over 100 shrines) is the most sacred shrine in Japan. It is dedicated to Amaterasu (the Sun goddess) and has been in existence since 4BC. The main shrine is alleged to hold the most important item in Japan’s imperial history: the Naik? (the mirror from Japanese mythology which eventually ended up in the hands of the first emperors). The shrine is demolished and rebuilt every 20 years in keeping with the Shinto idea of death and rebirth. This ranks very high on the list of places you will never go because the only person who can enter is the priest or priestess and he must be a member of the Japanese imperial family.",
+        "zoom": 14
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.72578692436218,
+          34.45496983812094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "top": 2,
         "name": "Mount Weather Emergency Operations Center",
         "city": " Berryville",
-        "lon": " 77°53'28.60",
-        "lat": " 39° 3'41.78",
+        "lon": "W 77°53'28.60\"",
+        "lat": "N 39° 3'41.78\"",
         "text": "This is a place that is not only closed to the public, but it is a place that the public hope to never have to enter! In most “end of the world” films we see these days, there is always a highly classified area where US government officials and a chosen few get to go in the hopes that they can escape the impending doom. It was set up in the 1950s due to the cold war but continues to operate today. It is a “last hope” area. For obvious reasons its operations are highly classified. It is run by the Federal Emergency Management Agency (FEMA).",
         "zoom": 8
       },
@@ -120,8 +178,8 @@
         "top": 1,
         "name": "RAF Menwith Hill",
         "city": " Harrogate, North Yorkshire",
-        "lon": "  1°41'10.38\"O",
-        "lat": " 54° 0'33.07\"N",
+        "lon": "W 1°41'10.38\"",
+        "lat": "N 54° 0'33.07\"",
         "text": "RAF Menwith Hill is a British military base with connections to the global ECHELON spy network. The site contains an extensive satellite ground station and is a communications intercept and missile warning site and has been described as the largest electronic monitoring station in the world. The site acts as a ground station for a number of satellites operated by the US National Reconnaissance Office, on behalf of the US National Security Agency, with antennae contained in a large number of highly distinctive white radomes, and is alleged to be an element of the ECHELON system.",
         "zoom": 12
       },
