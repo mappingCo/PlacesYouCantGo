@@ -76,6 +76,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   
 });
 
+var popupContent;
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
@@ -91,6 +92,7 @@ function changeCenter(mapView){
       info_p = data.features[mapView].properties.text;
       top_p = data.features[mapView].properties.top;
       mapViewZoom= data.features[mapView].properties.zoom;
+      popupContent ='<b>'+feature.properties.name + '</b><br />' + data.features[mapView].properties.lat+', '+  data.features[mapView].properties.lon
 
     }
 
@@ -99,10 +101,15 @@ function changeCenter(mapView){
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-  //marker
-  L.marker([mapCenterLat,mapCenterLon], {icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'orange', prefix: 'fa', iconColor: 'black'}) }).addTo(map);
-  marker.zIndexOffset(1000);
-  marker.riseOnHover(true);
+  //AwesomeMarkers
+  L.marker([mapCenterLat,mapCenterLon], {
+    icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'orange', prefix: 'fa', iconColor: 'black'}),
+    zIndexOffset(1000),
+    riseOnHover(true),
+    bindPopup(popupContent)
+  }).addTo(map);
+  
+
 
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
