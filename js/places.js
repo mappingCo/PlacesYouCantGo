@@ -102,8 +102,14 @@ function changeCenter(mapView){
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
   //AwesomeMarkers
+  var cofeeIcon = L.AwesomeMarkers.icon({
+    icon: 'coffee', 
+    markerColor: 'orange', 
+    prefix: 'fa', 
+    iconColor: 'black'
+  });
   L.marker([mapCenterLat,mapCenterLon], {
-    icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'orange', prefix: 'fa', iconColor: 'black'}),
+    icon: cofeeIcon,
     zIndexOffset(1000),
     riseOnHover(true),
     bindPopup(popupContent)
