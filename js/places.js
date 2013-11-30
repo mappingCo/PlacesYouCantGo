@@ -109,11 +109,11 @@ function changeCenter(mapView){
     iconColor: 'black'
   });
   L.marker([mapCenterLat,mapCenterLon], {
-    icon: cofeeIcon,
-    zIndexOffset(1000),
-    riseOnHover(true),
-    bindPopup(popupContent)
+    icon: cofeeIcon
   }).addTo(map);
+  marker.zIndexOffset(1000);
+  marker.riseOnHover(true);
+  marker.bindPopup(popupContent);
   
 
 
