@@ -10,6 +10,7 @@ var map,
 
 var numFeatures = 10;
 
+//view control buttons
 $('#go').click(function(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
@@ -40,12 +41,15 @@ $('#back').click(function(){
   console.log('change to mapView '+ mapView)
 });
 
-//create base map
-var places = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+//create layer group base maps
+var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
-
+var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
+  attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
+  subdomains: '1234'
+});
 
 //get geojson data on the map
 $.getJSON("./GeoJSON/places.geojson", function(data) {
@@ -54,8 +58,11 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
       layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
     }
   });
-  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
-  places.addTo(map);
+  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds().layers:[osm, Nokia_satellite]);
+  var placesLayerGroup = new L.LayerGroup();
+  placesLayerGroup.addLayer(osmlayer,MapQuest);
+  L.control.layers(osmlayer, MapQuest).addTo(map);
+  //osmlayer.addTo(map);
   geojson.addTo(map);
   map.setView(new L.LatLng(40.7, 30.25), 2);
 });
