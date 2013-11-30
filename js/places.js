@@ -41,7 +41,7 @@ $('#back').click(function(){
   console.log('change to mapView '+ mapView)
 });
 
-//create layer group base maps
+//create base maps layers
 var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -51,6 +51,11 @@ var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{
   subdomains: '1234'
 });
 
+var baseLayers = {
+  "osm": osmlayer,
+  "satellite":MapQuest
+};
+
 //get geojson data on the map
 $.getJSON("./GeoJSON/places.geojson", function(data) {
   var geojson = L.geoJson(data, {
@@ -59,10 +64,9 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
     }
   });
   map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
-  var placesLayerGroup = new L.LayerGroup();
-  placesLayerGroup.addLayer(osmlayer,MapQuest);
-  L.control.layers(osmlayer, MapQuest).addTo(map);
-  //osmlayer.addTo(map);
+
+  L.control.layers(baseLayers).addTo(map);
+  osmlayer.addTo(map);
   geojson.addTo(map);
   map.setView(new L.LatLng(40.7, 30.25), 2);
 });
