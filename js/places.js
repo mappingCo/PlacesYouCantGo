@@ -55,10 +55,9 @@ var googleLayer = new L.Google('SATELLITE');
 
 
 var baseLayers = {
-  "Google Sat": googleLayer,
   "osm": osmlayer,
-  "MapQuest Sat":MapQuest
-  
+  "MapQuest Sat":MapQuest,
+  "Google Sat": googleLayer
 };
 
 //get geojson data on the map
@@ -74,6 +73,8 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   osmlayer.addTo(map);
   geojson.addTo(map);
   map.setView(new L.LatLng(40.7, 30.25), 2);
+  marker.zIndexOffset(1000);
+  marker.riseOnHover(true);
 });
 
 
@@ -102,5 +103,6 @@ function changeCenter(mapView){
   map.setView(targetlatlng, mapViewZoom);
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
   $('#info').html('<p>'+info_p+'</p>');
-}
+};
+
 
