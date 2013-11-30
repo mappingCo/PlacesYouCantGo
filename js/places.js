@@ -111,7 +111,7 @@ function changeCenter(mapView){
   L.marker([mapCenterLat,mapCenterLon], {
     icon: cofeeIcon, 
     zIndexOffset:'true', 
-    riseOnHover:'true',
+    riseOnHover:true,
     bindPopup: popupContent
   }).addTo(map);
 
