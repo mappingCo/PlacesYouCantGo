@@ -92,7 +92,7 @@ function changeCenter(mapView){
       info_p = data.features[mapView].properties.text;
       top_p = data.features[mapView].properties.top;
       mapViewZoom= data.features[mapView].properties.zoom;
-      popupContent ='<b>'+feature.properties.name + '</b><br />' + data.features[mapView].properties.lat+', '+  data.features[mapView].properties.lon
+      popupContent ='<b>'+data.features[mapView].properties.name + '</b><br />' + data.features[mapView].properties.lat+', '+  data.features[mapView].properties.lon
 
     }
 
