@@ -58,7 +58,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
       layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
     }
   });
-  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds().layers:[osm, Nokia_satellite]);
+  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
   var placesLayerGroup = new L.LayerGroup();
   placesLayerGroup.addLayer(osmlayer,MapQuest);
   L.control.layers(osmlayer, MapQuest).addTo(map);
