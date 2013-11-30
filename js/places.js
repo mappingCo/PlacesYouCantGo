@@ -51,12 +51,13 @@ var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{
   subdomains: '1234',
   maxZoom:11
 });
-var googleLayer = new L.Google('SATELLITE');
+//var googleLayer = new L.Google('SATELLITE');
 
 
 var baseLayers = {
   "osm": osmlayer,
   "MapQuest Sat":MapQuest
+  //"Google Sat": googleLayer
 };
 
 //get geojson data on the map
