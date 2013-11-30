@@ -73,10 +73,8 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   osmlayer.addTo(map);
   geojson.addTo(map);
   map.setView(new L.LatLng(40.7, 30.25), 2);
-  marker.zIndexOffset(1000);
-  marker.riseOnHover(true);
+  
 });
-
 
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
@@ -97,10 +95,16 @@ function changeCenter(mapView){
     }
 
   });
-  console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon)
+  console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon);
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
+  //marker
+  L.marker([mapCenterLat,mapCenterLon], {icon: L.AwesomeMarkers.icon({icon: 'coffee', markerColor: 'orange', prefix: 'fa', iconColor: 'black'}) }).addTo(map);
+  marker.zIndexOffset(1000);
+  marker.riseOnHover(true);
+
+  //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
   $('#info').html('<p>'+info_p+'</p>');
 };
