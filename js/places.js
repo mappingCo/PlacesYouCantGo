@@ -50,10 +50,13 @@ var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{
   attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
   subdomains: '1234'
 });
+var googleLayer = new L.Google('SATELLITE');
+
 
 var baseLayers = {
   "osm": osmlayer,
-  "satellite":MapQuest
+  "MapQuest Sat":MapQuest,
+  "Google Sat": googleLayer
 };
 
 //get geojson data on the map
