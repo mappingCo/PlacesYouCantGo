@@ -59,12 +59,28 @@ var baseLayers = {
   "MapQuest Sat":MapQuest,
   "Google Sat": googleLayer
 };
+var oneIcon = L.icon({
+  iconUrl: 'Forbidden-icon.png', 
+  iconSize:     [38, 40], // size of the icon
+  shadowSize:   [50, 64], // size of the shadow
+  iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+  shadowAnchor: [4, 62],  // the same for the shadow
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+
 
 //get geojson data on the map
 $.getJSON("./GeoJSON/places.geojson", function(data) {
   var geojson = L.geoJson(data, {
     onEachFeature: function (feature, layer) {
-      layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
+      popupContent ='<b>'+feature.properties.name + '</b><br />' + feature.properties.properties.lat+', '+ features.properties.lon
+      //layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
+      L.marker([feature.geometry.coordinates[0],feature.geometry.coordinates[1]], {
+        icon: oneIcon, 
+        //zIndexOffset: 1000, 
+        riseOnHover:true,
+        bindPopup: popupContent
+      }).addTo(map);
     }
   });
   map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
@@ -92,7 +108,6 @@ function changeCenter(mapView){
       info_p = data.features[mapView].properties.text;
       top_p = data.features[mapView].properties.top;
       mapViewZoom= data.features[mapView].properties.zoom;
-      popupContent ='<b>'+data.features[mapView].properties.name + '</b><br />' + data.features[mapView].properties.lat+', '+  data.features[mapView].properties.lon
 
     }
 
@@ -101,23 +116,6 @@ function changeCenter(mapView){
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-  //AwesomeMarkers
-  var oneIcon = L.icon({
-    iconUrl: 'Forbidden-icon.png', 
-    iconSize:     [38, 95], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
-  L.marker([mapCenterLat,mapCenterLon], {
-    icon: oneIcon, 
-    zIndexOffset: 1000, 
-    riseOnHover:true,
-    bindPopup: popupContent
-  }).addTo(map);
-
-  
 
 
   //change text on sidepanel
