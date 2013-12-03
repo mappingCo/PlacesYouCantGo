@@ -34,3 +34,6 @@ html, body, #PlacesYouCantGo {
   height: 100%;
   width: 90%;
 }
+.popupTitle {
+	color: blue;
+}
