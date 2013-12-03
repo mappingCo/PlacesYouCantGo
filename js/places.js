@@ -82,7 +82,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
     //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
     onEachFeature: onEachFeature
   });
-  map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
+  map = L.map('PlacesYouCantGo').fitBounds(geojsonLayer.getBounds());
 
   L.control.layers(baseLayers).addTo(map);
   osmlayer.addTo(map);
