@@ -37,7 +37,4 @@ html, body, #PlacesYouCantGo {
 .popupTitle {
 	color: blue;
 }
-.leaflet-container img {
-	max-width: 300px;
-}
 
