@@ -46,6 +46,7 @@ var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
+//MapQuest Open Aerial - global coverage is provided at zoom levels 0-11. Zoom Levels 12+ are provided only in the United States)
 var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
   attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
   subdomains: '1234',
@@ -64,7 +65,10 @@ var baseLayers = {
 $.getJSON("./GeoJSON/places.geojson", function(data) {
   var geojson = L.geoJson(data, {
     onEachFeature: function (feature, layer) {
-      layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon);
+      marker.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
+      marker.on('mouseover',function(){
+        marker.bindPopup('hi');
+      })
     }
   });
   map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
@@ -76,7 +80,8 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   
 });
 
-var popupContent;
+
+
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
