@@ -10,6 +10,9 @@ var map,
 
 var numFeatures = 10;
 
+var InitialCenter = new L.LatLng(40.7, 30.25);
+
+
 //view control buttons
 $('#go').click(function(){
   $('#back-button').removeClass('hidden');
@@ -61,28 +64,32 @@ var baseLayers = {
   //"Google Sat": googleLayer
 };
 
-//get geojson data on the map
+function onEachFeature(feature, layer) {
+  layer.on({
+    mouseover:hoverEfect
+  })
+  //layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
+};
+
+function hoverEfect(e){
+  var layer=e.target;
+  layer.bindPopup('<b>'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img src="'+layer.feature.properties.top+'.png">').openPopup();
+};
+
+//get geojson data and creates a layer 
 $.getJSON("./GeoJSON/places.geojson", function(data) {
-  var geojson = L.geoJson(data, {
+  var geojsonLayer = L.geoJson(data, {
     //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
-    //A common reason to use this option is to attach a popup to features when they are clicked
-    onEachFeature: function (feature, layer) {
-      layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
-      layer.on('mouseover',function(){
-        layer.bindPopup('hi');
-      })
-    }
+    onEachFeature: onEachFeature
   });
   map = L.map('PlacesYouCantGo').fitBounds(geojson.getBounds());
 
   L.control.layers(baseLayers).addTo(map);
   osmlayer.addTo(map);
-  geojson.addTo(map);
-  map.setView(new L.LatLng(40.7, 30.25), 2);
+  geojsonLayer.addTo(map);
+  map.setView(InitialCenter, 2);
   
 });
-
-
 
 
 //zoom a la siguiente localizacion 
