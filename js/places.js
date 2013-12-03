@@ -64,7 +64,7 @@ var baseLayers = {
 //get geojson data on the map
 $.getJSON("./GeoJSON/places.geojson", function(data) {
   var geojson = L.geoJson(data, {
-    onEachFeature: function (feature, layer) {
+    onEachFeature: function (feature, marker) {
       marker.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
       marker.on('mouseover',function(){
         marker.bindPopup('hi');
