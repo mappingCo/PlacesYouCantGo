@@ -64,10 +64,12 @@ var baseLayers = {
 //get geojson data on the map
 $.getJSON("./GeoJSON/places.geojson", function(data) {
   var geojson = L.geoJson(data, {
-    onEachFeature: function (feature, marker) {
-      marker.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
-      marker.on('mouseover',function(){
-        marker.bindPopup('hi');
+    //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
+    //A common reason to use this option is to attach a popup to features when they are clicked
+    onEachFeature: function (feature, layer) {
+      layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
+      layer.on('mouseover',function(){
+        layer.bindPopup('hi');
       })
     }
   });
@@ -79,6 +81,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   map.setView(new L.LatLng(40.7, 30.25), 2);
   
 });
+
 
 
 
