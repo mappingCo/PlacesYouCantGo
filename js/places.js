@@ -73,7 +73,7 @@ function onEachFeature(feature, layer) {
 
 function hoverEfect(e){
   var layer=e.target;
-  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img max-width="300px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img src="./img/'+layer.feature.properties.top+'.jpg">', {
     minWidth: 320,
   }).openPopup();
 };
