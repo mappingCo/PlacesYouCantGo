@@ -73,7 +73,7 @@ function onEachFeature(feature, layer) {
 
 function hoverEfect(e){
   var layer=e.target;
-  layer.bindPopup('<b>'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img src="'+layer.feature.properties.top+'.png">').openPopup();
+  layer.bindPopup('<b>'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img src="img/'+layer.feature.properties.top+'.png">').openPopup();
 };
 
 //get geojson data and creates a layer 
