@@ -78,6 +78,7 @@ function showPopup(e){
 };
 
 function zoomToFeature(e) {
+  var layer=e.target;
   changeCenter(layer.feature.properties.top);
   layer.openPopup();
   //map.fitBounds(e.target.getBounds());
