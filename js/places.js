@@ -75,10 +75,12 @@ function onEachFeature(feature, layer) {
   layer.on({
     mouseover:showPopup,
     click: zoomToFeature,//and openPopup
-    viewreset:showPopup
+    viewreset:hola
   })
 };
-
+function hola(e){
+  alert('ki');
+}
 function showPopup(e){
   var layer=e.target;
   if (user_OnTour) {
