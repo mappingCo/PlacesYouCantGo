@@ -23,8 +23,10 @@ $('#go').click(function(){
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
+var user_OnTour =false;
 
 $('#next').click(function(){
+  user_OnTour =true;
   console.log('mapView '+mapView)
   if (mapView > 1) {
     mapView= mapView-1;
@@ -37,6 +39,7 @@ $('#next').click(function(){
 });
 
 $('#back').click(function(){
+  user_OnTour =true;
   if (mapView < numFeatures) {
     mapView= mapView+1;
   }
@@ -71,20 +74,24 @@ var baseLayers = {
 function onEachFeature(feature, layer) {
   layer.on({
     mouseover:showPopup,
-    click: zoomToFeature
+    click: zoomToFeature,//and openPopup
+    viewreset:showPopup
   })
 };
 
 function showPopup(e){
   var layer=e.target;
-  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
-    minWidth: 260,
-  }).openPopup();
+  if (user_OnTour) {
+    layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+      minWidth: 260,
+    }).openPopup();
+  }
 };
 
 function zoomToFeature(e) {
   OnTour();
   var layer=e.target;
+  mapView= layer.feature.properties.top;
   changeCenter(layer.feature.properties.top);
   layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
     minWidth: 260,
@@ -131,11 +138,6 @@ function changeCenter(mapView){
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
   
-  //map._layers[top_p].fire('click');
-  //map._layers[top_p].fireEvent('click');
-  //geojsonLayer.fireEvent('click');
-  //geojsonLayer.fireEvent('click',{latlng:[mapCenterLat,mapCenterLon]})
-
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
   $('#info').html('<p>'+info_p+'</p>');
