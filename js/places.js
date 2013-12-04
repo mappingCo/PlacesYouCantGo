@@ -132,7 +132,7 @@ function changeCenter(mapView){
   map.setView(targetlatlng, mapViewZoom);
   
   map._layers[30].fire('click');
-
+  geojsonLayer.fireEvent('click');
   //geojsonLayer.fireEvent('click',{latlng:[mapCenterLat,mapCenterLon]})
 
   //change text on sidepanel
