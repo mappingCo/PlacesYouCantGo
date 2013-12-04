@@ -21,7 +21,8 @@ $('#go').click(function(){
 });
 
 $('#next').click(function(){
-  if (mapView < 2) {
+  console.log('mapView '+mapView)
+  if (mapView > 1) {
     mapView= mapView-1;
   }
   else {
@@ -114,7 +115,6 @@ function changeCenter(mapView){
     dataType: 'json',
     success: function (data) {
       var target = mapView-1;
-      console.log(target);
       console.log(data.features[target].properties.name);
       mapCenterLat = data.features[target].geometry.coordinates[1];
       mapCenterLon = data.features[target].geometry.coordinates[0];
