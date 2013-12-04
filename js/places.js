@@ -1,17 +1,15 @@
-
-var map,
-  mapView = 0,
-  mapViewZoom,
-  mapCenterLon,
-  mapCenterLat,
-  headline_h1,
-  info_p,
-  top_p;
-
 var numFeatures = 10;
 
-var InitialCenter = new L.LatLng(40.7, 30.25);
+var map,
+    mapView = numFeatures,
+    mapViewZoom,
+    mapCenterLon,
+    mapCenterLat,
+    headline_h1,
+    info_p,
+    top_p;
 
+var InitialCenter = new L.LatLng(40.7, 30.25);
 
 //view control buttons
 $('#go').click(function(){
@@ -23,22 +21,22 @@ $('#go').click(function(){
 });
 
 $('#next').click(function(){
-  if (mapView < numFeatures-1) {
-    mapView= mapView+1;
+  if (mapView < 2) {
+    mapView= mapView-1;
   }
   else {
-    mapView=0;
+    mapView=numFeatures;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
-  if (mapView>0) {
-    mapView= mapView-1;
+  if (mapView < numFeatures) {
+    mapView= mapView+1;
   }
   else {
-    mapView= numFeatures-1;
+    mapView= 1;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
@@ -67,15 +65,22 @@ var baseLayers = {
 
 function onEachFeature(feature, layer) {
   layer.on({
-    mouseover:hoverEfect
+    mouseover:showPopup,
+    click: zoomToFeature
   })
 };
 
-function hoverEfect(e){
+function showPopup(e){
   var layer=e.target;
   layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
     minWidth: 260,
   }).openPopup();
+};
+
+function zoomToFeature(e) {
+  changeCenter(layer.feature.properties.top);
+  layer.openPopup();
+  //map.fitBounds(e.target.getBounds());
 };
 
 var geojsonLayer;
