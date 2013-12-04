@@ -35,8 +35,7 @@ $('#next').click(function(){
   else {
     mapView = numFeatures;
   }
-  zoomToFeature();
-  //changeCenter(mapView);
+  changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
