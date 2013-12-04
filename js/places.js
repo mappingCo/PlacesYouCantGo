@@ -35,7 +35,8 @@ $('#next').click(function(){
   else {
     mapView = numFeatures;
   }
-  changeCenter(mapView);
+  zoomToFeature();
+  //changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
@@ -75,20 +76,15 @@ var baseLayers = {
 function onEachFeature(feature, layer) {
   layer.on({
     mouseover:showPopup,
-    click: zoomToFeature,//and openPopup
-    viewreset:hola
+    click: zoomToFeature//and openPopup
   });
-
 };
-function hola(e){
-  alert('ki');
-}
+
 function showPopup(e){
   var layer=e.target;
   layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
     minWidth: 260,
   }).openPopup();
-
 };
 
 function zoomToFeature(e) {
@@ -140,7 +136,7 @@ function changeCenter(mapView){
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-  map._layers[top_p].fire('click');
+  //map._layers[top_p].fire('click');
   
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
