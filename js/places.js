@@ -49,6 +49,7 @@ var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
+
 //MapQuest Open Aerial - global coverage is provided at zoom levels 0-11. Zoom Levels 12+ are provided only in the United States)
 var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
   attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
@@ -68,7 +69,6 @@ function onEachFeature(feature, layer) {
   layer.on({
     mouseover:hoverEfect
   })
-  //layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
 };
 
 function hoverEfect(e){
@@ -93,7 +93,6 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   
 });
 
-
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
@@ -109,32 +108,13 @@ function changeCenter(mapView){
       info_p = data.features[mapView].properties.text;
       top_p = data.features[mapView].properties.top;
       mapViewZoom= data.features[mapView].properties.zoom;
-
     }
-
   });
   console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon);
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-
-/*  var oneIcon = L.icon({
-    iconUrl: 'Forbidden-icon.png', 
-    iconSize:     [38, 40], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
-  L.marker([mapCenterLat,mapCenterLon], {
-    icon: oneIcon, 
-    //zIndexOffset: 1000, 
-    riseOnHover:true,
-    bindPopup: popupContent
-  }).addTo(map);*/
-
-  
-
+  geojsonLayer.openPopup();
 
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
