@@ -10,6 +10,7 @@ var map,
     top_p;
 
 var InitialCenter = new L.LatLng(40.7, 30.25);
+var jsonDataUrl ="./GeoJSON/places.geojson"
 
 function OnTour(){
   $('#back-button').removeClass('hidden');
@@ -29,22 +30,22 @@ $('#next').click(function(){
   user_OnTour =true;
   console.log('mapView '+mapView)
   if (mapView > 1) {
-    mapView= mapView-1;
+    mapView = mapView-1;
   }
   else {
-    mapView=numFeatures;
+    mapView = numFeatures;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
-  user_OnTour =true;
+  user_OnTour = true;
   if (mapView < numFeatures) {
     mapView= mapView+1;
   }
   else {
-    mapView= 1;
+    mapView = 1;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
@@ -76,18 +77,18 @@ function onEachFeature(feature, layer) {
     mouseover:showPopup,
     click: zoomToFeature,//and openPopup
     viewreset:hola
-  })
+  });
+
 };
 function hola(e){
   alert('ki');
 }
 function showPopup(e){
   var layer=e.target;
-  if (user_OnTour) {
-    layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
-      minWidth: 260,
-    }).openPopup();
-  }
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+    minWidth: 260,
+  }).openPopup();
+
 };
 
 function zoomToFeature(e) {
@@ -104,7 +105,7 @@ function zoomToFeature(e) {
 var geojsonLayer;
 
 //get geojson data and creates a layer 
-$.getJSON("./GeoJSON/places.geojson", function(data) {
+$.getJSON(jsonDataUrl, function(data) {
   geojsonLayer = L.geoJson(data, {
     //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
     onEachFeature: onEachFeature
@@ -121,7 +122,7 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
-    url: './GeoJSON/places.geojson',
+    url: jsonDataUrl,
     async: false,
     dataType: 'json',
     success: function (data) {
@@ -139,6 +140,7 @@ function changeCenter(mapView){
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
+  map._layers[top_p].fire('click');
   
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
