@@ -132,7 +132,7 @@ function changeCenter(mapView){
   map.setView(targetlatlng, mapViewZoom);
   
   //map._layers[top_p].fire('click');
-  map._layers[top_p].fireEvent('click');
+  //map._layers[top_p].fireEvent('click');
   //geojsonLayer.fireEvent('click');
   //geojsonLayer.fireEvent('click',{latlng:[mapCenterLat,mapCenterLon]})
 
