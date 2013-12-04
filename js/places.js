@@ -78,9 +78,11 @@ function hoverEfect(e){
   }).openPopup();
 };
 
+var geojsonLayer;
+
 //get geojson data and creates a layer 
 $.getJSON("./GeoJSON/places.geojson", function(data) {
-  var geojsonLayer = L.geoJson(data, {
+  geojsonLayer = L.geoJson(data, {
     //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
     onEachFeature: onEachFeature
   });
