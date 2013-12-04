@@ -11,11 +11,15 @@ var map,
 
 var InitialCenter = new L.LatLng(40.7, 30.25);
 
-//view control buttons
-$('#go').click(function(){
+function OnTour(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
   $('#go-button').addClass('hidden');
+}
+
+//view control buttons
+$('#go').click(function(){
+  OnTour();
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
@@ -79,13 +83,11 @@ function showPopup(e){
 };
 
 function zoomToFeature(e) {
-  $('#back-button').removeClass('hidden');
-  $('#next-button').removeClass('hidden');
-  $('#go-button').addClass('hidden');
+  OnTour();
   var layer=e.target;
   changeCenter(layer.feature.properties.top);
   layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
-  minWidth: 260,
+    minWidth: 260,
   }).openPopup();
   //map.fitBounds(e.target.getBounds());
 };
@@ -128,6 +130,8 @@ function changeCenter(mapView){
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
+
+  map.fireEvent('click',{latlng:[mapCenterLat,mapCenterLon]})
 
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
