@@ -78,9 +78,14 @@ function showPopup(e){
 };
 
 function zoomToFeature(e) {
+  $('#back-button').removeClass('hidden');
+  $('#next-button').removeClass('hidden');
+  $('#go-button').addClass('hidden');
   var layer=e.target;
   changeCenter(layer.feature.properties.top);
-  layer.openPopup();
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+  minWidth: 260,
+  }).openPopup();
   //map.fitBounds(e.target.getBounds());
 };
 
@@ -108,21 +113,21 @@ function changeCenter(mapView){
     async: false,
     dataType: 'json',
     success: function (data) {
-      console.log(mapView);
-      console.log(data.features[mapView].properties.name);
-      mapCenterLat = data.features[mapView].geometry.coordinates[1];
-      mapCenterLon = data.features[mapView].geometry.coordinates[0];
-      headline_h1 = data.features[mapView].properties.name;
-      info_p = data.features[mapView].properties.text;
-      top_p = data.features[mapView].properties.top;
-      mapViewZoom= data.features[mapView].properties.zoom;
+      var target = mapView-1;
+      console.log(target);
+      console.log(data.features[target].properties.name);
+      mapCenterLat = data.features[target].geometry.coordinates[1];
+      mapCenterLon = data.features[target].geometry.coordinates[0];
+      headline_h1 = data.features[target].properties.name;
+      info_p = data.features[target].properties.text;
+      top_p = data.features[target].properties.top;
+      mapViewZoom= data.features[target].properties.zoom;
     }
   });
   console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon);
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-  geojsonLayer.openPopup();
 
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
