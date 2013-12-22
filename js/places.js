@@ -24,6 +24,7 @@ $('#go').click(function(){
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
+
 var user_OnTour =false;
 
 $('#next').click(function(){
@@ -65,7 +66,6 @@ var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{
 });
 //var googleLayer = new L.Google('SATELLITE');
 
-
 var baseLayers = {
   "osm": osmlayer,
   "MapQuest Sat":MapQuest
@@ -81,8 +81,8 @@ function onEachFeature(feature, layer) {
 
 function showPopup(e){
   var layer=e.target;
-  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
-    minWidth: 260,
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="195px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+    minWidth: 200,
   }).openPopup();
 };
 
