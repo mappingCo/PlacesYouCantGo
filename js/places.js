@@ -1,44 +1,52 @@
-
-var map,
-  mapView = 0,
-  mapViewZoom,
-  mapCenterLon,
-  mapCenterLat,
-  headline_h1,
-  info_p,
-  top_p;
-
 var numFeatures = 10;
 
+var map,
+    mapView = numFeatures,
+    mapViewZoom,
+    mapCenterLon,
+    mapCenterLat,
+    headline_h1,
+    info_p,
+    top_p;
+
 var InitialCenter = new L.LatLng(40.7, 30.25);
+var jsonDataUrl ="./GeoJSON/places.geojson"
 
-
-//view control buttons
-$('#go').click(function(){
+function OnTour(){
   $('#back-button').removeClass('hidden');
   $('#next-button').removeClass('hidden');
   $('#go-button').addClass('hidden');
+}
+
+//view control buttons
+$('#go').click(function(){
+  OnTour();
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
+var user_OnTour =false;
+
 $('#next').click(function(){
-  if (mapView < numFeatures-1) {
-    mapView= mapView+1;
+  user_OnTour =true;
+  console.log('mapView '+mapView)
+  if (mapView > 1) {
+    mapView = mapView-1;
   }
   else {
-    mapView=0;
+    mapView = numFeatures;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
 });
 
 $('#back').click(function(){
-  if (mapView>0) {
-    mapView= mapView-1;
+  user_OnTour = true;
+  if (mapView < numFeatures) {
+    mapView= mapView+1;
   }
   else {
-    mapView= numFeatures-1;
+    mapView = 1;
   }
   changeCenter(mapView);
   console.log('change to mapView '+ mapView)
@@ -49,6 +57,7 @@ var osmlayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 });
+
 //MapQuest Open Aerial - global coverage is provided at zoom levels 0-11. Zoom Levels 12+ are provided only in the United States)
 var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{y}.jpg', {
   attribution: 'Tiles Courtesy of <a href="http://www.mapquest.com/">MapQuest</a> &mdash; Portions Courtesy NASA/JPL-Caltech and U.S. Depart. of Agriculture, Farm Service Agency',
@@ -56,7 +65,6 @@ var MapQuest = L.tileLayer('http://oatile{s}.mqcdn.com/tiles/1.0.0/sat/{z}/{x}/{
   maxZoom:11
 });
 //var googleLayer = new L.Google('SATELLITE');
-
 
 var baseLayers = {
   "osm": osmlayer,
@@ -66,21 +74,34 @@ var baseLayers = {
 
 function onEachFeature(feature, layer) {
   layer.on({
-    mouseover:hoverEfect
-  })
-  //layer.bindPopup('<b>'+feature.properties.name + '</b><br />' + feature.properties.lat+', '+ feature.properties.lon+'<br/><img src="'+feature.properties.top+'.png">');
+    mouseover:showPopup,
+    click: zoomToFeature//and openPopup
+  });
 };
 
-function hoverEfect(e){
+function showPopup(e){
   var layer=e.target;
-  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="300px" src="./img/'+layer.feature.properties.top+'.jpg">', {
-    minWidth: 320,
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="195px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+    minWidth: 200,
   }).openPopup();
 };
 
+function zoomToFeature(e) {
+  OnTour();
+  var layer=e.target;
+  mapView= layer.feature.properties.top;
+  changeCenter(layer.feature.properties.top);
+  layer.bindPopup('<b class="popupTitle">'+layer.feature.properties.name + '</b><br />' + layer.feature.properties.lat+', '+ layer.feature.properties.lon+'<br/><img width="250px" src="./img/'+layer.feature.properties.top+'.jpg">', {
+    minWidth: 260,
+  }).openPopup();
+  //map.fitBounds(e.target.getBounds());
+};
+
+var geojsonLayer;
+
 //get geojson data and creates a layer 
-$.getJSON("./GeoJSON/places.geojson", function(data) {
-  var geojsonLayer = L.geoJson(data, {
+$.getJSON(jsonDataUrl, function(data) {
+  geojsonLayer = L.geoJson(data, {
     //The onEachFeature option is a function that gets called on each feature before adding it to a GeoJSON layer. 
     onEachFeature: onEachFeature
   });
@@ -93,49 +114,29 @@ $.getJSON("./GeoJSON/places.geojson", function(data) {
   
 });
 
-
 //zoom a la siguiente localizacion 
 function changeCenter(mapView){
   $.ajax({
-    url: './GeoJSON/places.geojson',
+    url: jsonDataUrl,
     async: false,
     dataType: 'json',
     success: function (data) {
-      console.log(mapView);
-      console.log(data.features[mapView].properties.name);
-      mapCenterLat = data.features[mapView].geometry.coordinates[1];
-      mapCenterLon = data.features[mapView].geometry.coordinates[0];
-      headline_h1 = data.features[mapView].properties.name;
-      info_p = data.features[mapView].properties.text;
-      top_p = data.features[mapView].properties.top;
-      mapViewZoom= data.features[mapView].properties.zoom;
-
+      var target = mapView-1;
+      console.log(data.features[target].properties.name);
+      mapCenterLat = data.features[target].geometry.coordinates[1];
+      mapCenterLon = data.features[target].geometry.coordinates[0];
+      headline_h1 = data.features[target].properties.name;
+      info_p = data.features[target].properties.text;
+      top_p = data.features[target].properties.top;
+      mapViewZoom= data.features[target].properties.zoom;
     }
-
   });
   console.log('new mapCenter: '+ mapCenterLat +','+mapCenterLon);
 
   var targetlatlng = L.latLng(mapCenterLat, mapCenterLon);
   map.setView(targetlatlng, mapViewZoom);
-
-/*  var oneIcon = L.icon({
-    iconUrl: 'Forbidden-icon.png', 
-    iconSize:     [38, 40], // size of the icon
-    shadowSize:   [50, 64], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
-  });
-  L.marker([mapCenterLat,mapCenterLon], {
-    icon: oneIcon, 
-    //zIndexOffset: 1000, 
-    riseOnHover:true,
-    bindPopup: popupContent
-  }).addTo(map);*/
-
+  //map._layers[top_p].fire('click');
   
-
-
   //change text on sidepanel
   $('#headline').html('#'+top_p + ' <i>'+headline_h1+'</i>');
   $('#info').html('<p>'+info_p+'</p>');
