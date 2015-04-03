@@ -4,4 +4,4 @@ http://listverse.com/2010/01/06/top-10-places-you-cant-go/
 
 Made with GeoJSON data and leaflet.js
 
-You can see it in: http://mappingco.github.io/PlacesYouCantGo/
+You can see it in: http://sigon426.github.io/PlacesYouCantGo/
